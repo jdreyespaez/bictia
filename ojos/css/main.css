@@ -1,0 +1,209 @@
+* {
+  transition: .2s linear;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px auto;
+  font-family: helvetica neue, helvetica, arial, sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+h1 em {
+  color: #089ac5;
+}
+
+#container {
+  width: 500px;
+  height: 300px;
+  background: #d3dfe2;
+  margin: 50px auto;
+  position: relative;
+}
+#container span {
+  display: block;
+  width: 50px;
+  height: 50px;
+  float: left;
+  position: relative;
+  z-index: 1;
+}
+#container span:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+#container span:nth-child(n+1):nth-child(-n+20):hover ~ #eye #pupil {
+  top: 10px;
+}
+#container span:nth-child(n+21):nth-child(-n+30):hover ~ #eye #pupil {
+  top: 20px;
+}
+#container span:nth-child(n+31):nth-child(-n+40):hover ~ #eye #pupil {
+  top: 40px;
+}
+#container span:nth-child(n+41):nth-child(-n+70):hover ~ #eye #pupil {
+  top: 50px;
+}
+#container span:nth-child(10n+1):hover ~ #eye #pupil, #container span:nth-child(10n+2):hover ~ #eye #pupil, #container span:nth-child(10n+3):hover ~ #eye #pupil, #container span:nth-child(10n+4):hover ~ #eye #pupil {
+  left: 10px;
+}
+#container span:nth-child(10n+5):hover ~ #eye #pupil {
+  left: 20px;
+}
+#container span:nth-child(10n+6):hover ~ #eye #pupil {
+  left: 40px;
+}
+#container span:nth-child(10n+7):hover ~ #eye #pupil, #container span:nth-child(10n+8):hover ~ #eye #pupil, #container span:nth-child(10n+9):hover ~ #eye #pupil, #container span:nth-child(10n+10):hover ~ #eye #pupil {
+  left: 50px;
+}
+#container #center {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 220px;
+  top: 120px;
+  z-index: 3;
+  border-radius: 100%;
+}
+#container #center:hover ~ #eye {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(255, 0, 0, 0.3);
+}
+#container #center:hover:before {
+  content: 'I told you not to do that. Back off.';
+  color: red;
+  text-align: center;
+  line-height: 450px;
+  font-size: 20px;
+  font-family: helvetica neue,helvetica,arial,sans-serif;
+  font-weight: 200;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 0;
+  display: block;
+  height: 300px;
+  width: 500px;
+  margin: -150px 0 0 -250px;
+}
+#container #center:hover ~ #eye #pupil {
+  /* don't poke the eye - you'll make it mad! */
+  box-shadow: 0 0 10px 5px #ff997a,0 0 0 10px #c82f00;
+  animation: eyeWobble .07s linear infinite;
+}
+#container #eye {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  height: 100px;
+  width: 100px;
+  background: white;
+  z-index: 0;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2), inset 0 0 10px #d0e6ed;
+}
+#container #eye #pupil {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background: black;
+  top: 30px;
+  left: 30px;
+  box-shadow: 0 0 10px 5px #83e3ff,0 0 0 10px #089ac5;
+}
+#container #eye #pupil:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  right: 1px;
+  border-radius: 100%;
+  height: 13px;
+  width: 13px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+#eye2 {
+  position: absolute;
+  top: 100px;
+  left: 90px;
+  height: 100px;
+  width: 100px;
+  background: white;
+  z-index: 0;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2), inset 0 0 10px #d0e6ed;
+}
+#eye2 #pupil {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background: black;
+  top: 30px;
+  left: 30px;
+  box-shadow: 0 0 10px 5px #83e3ff,0 0 0 10px #089ac5;
+}
+#eye2 #pupil:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  right: 1px;
+  border-radius: 100%;
+  height: 13px;
+  width: 13px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+@keyframes eyeWobble {
+  0% {
+    left: 29px;
+  }
+  100% {
+    left: 30px;
+  }
+}
+#container {
+  width: 500px;
+  height: 300px;
+  background: #d3dfe2;
+  margin: 50px auto;
+  position: relative;
+}
+#container span {
+  display: block;
+  width: 50px;
+  height: 50px;
+  float: left;
+  position: relative;
+  z-index: 1;
+}
+#container span:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+#container span:nth-child(n+1):nth-child(-n+20):hover ~ #eye2 #pupil {
+  top: 10px;
+}
+#container span:nth-child(n+21):nth-child(-n+30):hover ~ #eye2 #pupil {
+  top: 20px;
+}
+#container span:nth-child(n+31):nth-child(-n+40):hover ~ #eye2 #pupil {
+  top: 40px;
+}
+#container span:nth-child(n+41):nth-child(-n+70):hover ~ #eye2 #pupil {
+  top: 50px;
+}
+#container span:nth-child(10n+1):hover ~ #eye2 #pupil, #container span:nth-child(10n+2):hover ~ #eye2 #pupil, #container span:nth-child(10n+3):hover ~ #eye2 #pupil, #container span:nth-child(10n+4):hover ~ #eye2 #pupil {
+  left: 10px;
+}
+#container span:nth-child(10n+5):hover ~ #eye2 #pupil {
+  left: 20px;
+}
+#container span:nth-child(10n+6):hover ~ #eye2 #pupil {
+  left: 40px;
+}
+#container span:nth-child(10n+7):hover ~ #eye2 #pupil, #container span:nth-child(10n+8):hover ~ #eye2 #pupil, #container span:nth-child(10n+9):hover ~ #eye2 #pupil, #container span:nth-child(10n+10):hover ~ #eye2 #pupil {
+  left: 50px;
+}

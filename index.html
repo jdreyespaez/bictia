@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="spider">
+        <img src="hangingSpider/hangingSpider1.png" alt="spider" class="img-responsive">
+    </div>
+
+
+    <div class="container">
+        <button class="accordion">Lista</button>
+        <div class="panel">
+
+            <div class="form-wrapper">
+                <!-- javascript:void(0) llama el valor y no retorna -->
+                <h1>Agregar elementos a la lista</h1>
+                <form action="javascript:void(0)" method="POST" onsubmit="funcion.Agregar()">
+
+                    <input type="text" id="Agregar-name" placeholder="agrega tu producto" class="buttonLista">
+                    <input type="submit" value="Agregar" class="buttonLista">
+
+                </form>
+
+                <div id="divForm">
+                    <form action="javascript:void(0)" method="POST" id="formCrud">
+                        <input type="text" id="campoNombre" class="buttonLista">
+                        <input type="submit" value="editar" class="buttonLista" />
+                        <a onclick="CloseInput()" class="close"><i class="fas fa-window-close"></i></a>
+                    </form>
+                </div>
+
+                <p id="lista"></p>
+
+                <table>
+                    <tr>
+                    </tr>
+                    <tbody id="productos">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button class="accordion">reloj</button>
+        <div class="panel" id="clock">
+            <div class="reloj">
+                <div class="time"></div>
+                <div class="time"></div>
+                <div class="time"></div>
+                <div id="fecha" class="time"></div>
+            </div>
+        </div>
+        <button class="accordion">Tienda</button>
+        <div class="panel">
+            <div class="shop-container"></div>
+        </div>
+        <button class="accordion">Registro</button>
+        <div class="panel">
+            <div id="formInscripcion">
+
+                <div id="img">
+                    <img src="images.jpg" style="margin-top: 60px; margin-left: 30px;width: 200px;
+                        height: 300px;" />
+                </div>
+
+                <div id="Datos">
+                    <form name="registro" action="" method="GET">
+                        <h1>Datos</h1>
+
+                        <input type="text" placeholder="Nombres" name="Nombre" id="Nombre" onChange="validarSiLetra(this.value);" /><br><br>
+                        <input type="text" placeholder="Apellidos" name="Apellido" id="Apellido" onChange="validarSiLetra(this.value);" /><br><br>
+                        <label>Fecha de Nacimiento</label><br><br>
+                        <div id="fecha">
+                            <input type="text" placeholder="Dia" id="Dia" name="Dia" onChange="validarSiNumero(this.value);" />
+                            <select type="Mes" id="Mes" name="Mes">
+                                    <option type="Meses">Mes</option>
+                                    <option type="Meses"value="1">Enero</option>
+                                    <option type="Meses"value="2">Febrero</option>
+                                    <option type="Meses"value="3">Marzo</option>
+                                    <option type="Meses"value="4">Abril</option>
+                                    <option type="Meses"value="5">Mayo</option>
+                                    <option type="Meses"value="6">Junio</option>
+                                    <option type="Meses"value="7">Julio</option>
+                                    <option type="Meses"value="8">Agosto</option>
+                                    <option type="Meses"value="9">Septiembre</option>
+                                    <option type="Meses"value="10">Octubre</option>
+                                    <option type="Meses"value="11">Noviembre</option>
+                                    <option type="Meses"value="12">Diciembre</option>
+                                </select>
+                            <input type="text" placeholder="Año" id="Año" name="Anio" onChange="validarSiNumero(this.value);" /><br><br>
+                        </div>
+                        <input type="email" placeholder="Correo" id="Correo" name="Correo" /><br><br>
+                        <input type="text" placeholder="Direccion" id="Direccion" name="Direccion" /><br><br>
+
+                        <input type="submit" value="Registrar" id="Registrar" onclick="" />
+                        <input type="reset" value="Borrar" id="Borrar" onclick="" />
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="lista/js/list.js"></script>
+    <script src="eyes.js"></script>
+    <script src="reloj.js"></script>
+    <script src="accordion.js"></script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>

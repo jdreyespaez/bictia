@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #8e44ad;
+}
+
+.container {
+    max-width: 997px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.spider {
+    position: fixed;
+    width: 180px;
+    padding: 5px;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.shop-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-row-gap: 10px;
+    padding: 10px;
+}
+
+.form-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.buttonLista {
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+#divForm {
+    display: none;
+}
+
+.close {
+    color: red;
+    margin-top: 10px;
+}
+
+.buttonList {
+    padding: 10px;
+    width: 120px;
+}
+
+.shop-item {
+    padding: 15px;
+    background-color: #eee;
+    color: #5f27cd;
+    -webkit-box-shadow: 0 0 10px 1px #949494;
+    box-shadow: 0 0 10px 1px #949494;
+}
+
+a {
+    text-decoration: none;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.accordion {
+    background-color: #e67e22;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: none;
+    transition: 1s;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.accordion:hover {
+    background: rgba(238, 238, 238, 0.475);
+}
+
+.panel {
+    display: none;
+    background-color: #1dd1a1;
+    padding: 1em;
+}
+
+
+/* Reloj */
+
+#clock {
+    background-color: #1dd1a1;
+    padding: 1em;
+}
+
+.reloj {
+    margin: 0 auto;
+    max-width: 250px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    grid-row-gap: 25px;
+}
+
+.time {
+    background-color: #eee;
+    margin: 0 auto;
+    text-align: center;
+    color: #1dd1a1;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 10px;
+    -webkit-box-shadow: 0 0 10px 1px #949494;
+    box-shadow: 0 0 10px 1px #949494;
+}
+
+#fecha {
+    grid-column: 1/4;
+}
+
+
+/* tienda */
+
+.product-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #fff;
+}
+
+.product-description,
+.product-comments {
+    background-color: #fff;
+}
+
+
+/* formulario */
+
+#formInscripcion {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    height: 400px;
+    max-width: 600px;
+    font-family: sans-serif;
+    background-color: black;
+    color: red;
+    text-align: center;
+}
+
+[type="text"] {
+    color: white;
+}
+
+[type="number"] {
+    color: white;
+}
+
+[type="email"] {
+    color: white;
+}
+
+[type="Mes"] {
+    color: rgb(180, 179, 179);
+}
+
+[type="Meses"] {
+    color: Black;
+    background-color: transparent;
+}
+
+#Datos {
+    width: 60%;
+}
+
+#Nombre {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: white;
+    width: 80%;
+}
+
+#Apellido {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: white;
+    width: 80%;
+}
+
+#Dia {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: white;
+    width: 23%;
+}
+
+#Mes {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: white;
+    width: 30%;
+}
+
+#Año {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: white;
+    width: 25%;
+}
+
+#Correo {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: white;
+    width: 80%;
+}
+
+#Direccion {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: white;
+    width: 80%;
+}
+
+#Registrar {
+    background-color: black;
+    border-color: white;
+    width: 100px;
+    height: 30px;
+    color: red;
+    font-size: 15px;
+}
+
+#Borrar {
+    background-color: black;
+    border-color: white;
+    width: 100px;
+    height: 30px;
+    color: red;
+    font-size: 15px;
+}
