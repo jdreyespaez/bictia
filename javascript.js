@@ -45,6 +45,38 @@ function validarSiLetra(letra) {
     }
 }
 
+// Llenando JSON con los datos del formulario
+var fecha = new Date();
+var formInscription = document.getElementsByName("registro")[0];
+function crear_registro(form){
+
+var cliente={
+    "nombre": formInscription.Nombre.value + " " + form.Apellido.value,
+    "usuario": formInscription.Correo.value,
+    "direccion": formInscription.Direccion.value,
+    "registro": new Date(),
+    "expira": calcula_fecha()
+}
+
+//Función para calcular la fecha en la que vence la cookie
+function calcula_fecha(){
+    // exdays es la cantidad de días que durará activa la Cookie "definido en checkCookie()" 
+    // x 1000 milisegundos x 60 segundos x 60 minutos x 24 horas
+    fecha.setTime(fecha.getTime() + (90*24*60*60*1000)); 
+    var expires = fecha.toGMTString();
+    return expires;
+}
+
+//VERIFICANDO QUE EL JSON QUEDE LLENO, LOS RESULTADOS SE PASARON A UN <PRE> PARA VERIFICAR EL CONTENIDO, 
+// LA IDEA ES QUE ESOS DATOS SE PASEN A LA COOKIE
+var html=JSON.stringify(cliente,0,4);
+document.getElementById("output").innerHTML=html;
+/*document.cookie = "nombre=" + cliente[3] + "; path:/";*/
+console.log(ErrorEvent);
+return false;   
+}
+
+
 (function(){
 
     var formInscription = document.getElementsByName("registro")[0];
