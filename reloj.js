@@ -21,7 +21,7 @@ function reloj() {
     document.getElementsByClassName("time")[0].innerHTML = hora;
     document.getElementsByClassName("time")[1].innerHTML = minuto;
     document.getElementsByClassName("time")[2].innerHTML = segundo;
-    console.log(horas)
+    // console.log(horas)
     setTimeout("reloj()", 1000)
         //setInterval("reloj()",1000)
 }
