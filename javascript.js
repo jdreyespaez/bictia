@@ -148,6 +148,72 @@ function validarSiLetra(letra) {
         }
     }
 
+
+   // Llenando JSON con los datos del formulario
+   var fecha = new Date();
+   var formInscription = document.getElementsByName("registro")[0];
+   function crear_registro(form){
+   
+   var cliente={
+       "nombre": formInscription.Nombre.value + " " + form.Apellido.value,
+       "usuario": formInscription.Correo.value,
+       "direccion": formInscription.Direccion.value,
+       "registro": new Date(),
+       "expira": calcula_fecha()
+   }
+   
+   //Función para calcular la fecha en la que vence la cookie
+   function calcula_fecha(){
+       // exdays es la cantidad de días que durará activa la Cookie "definido en checkCookie()" 
+       // x 1000 milisegundos x 60 segundos x 60 minutos x 24 horas
+       fecha.setTime(fecha.getTime() + (90*24*60*60*1000)); 
+       var expires = fecha.toGMTString();
+       return expires;
+   }
+   
+   //VERIFICANDO QUE EL JSON QUEDE LLENO
+   var json_cliente=JSON.stringify(cliente,0,4);
+   console.log(json_cliente);
+   return false;
+   }
+   
+   //INICIO RECOLECCION DE DATOS PARA COOKIES
+   function setCookie(cname, cvalue, exdays) {
+       var d = new Date();
+       d.setTime(d.getTime() + (exdays*24*60*60*1000)); 
+       var expires = "expires=" + d.toGMTString();
+       document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+   }
+   
+   function getCookie(cname) {
+       var name = cname + "=";
+       var decodedCookie = decodeURIComponent(document.cookie);
+       var ca = decodedCookie.split(';');
+       for(var i = 0; i < ca.length; i++) {
+           var c = ca[i];
+           while (c.charAt(0) == ' ') {
+               c = c.substring(1);
+           }
+           if (c.indexOf(name) == 0) {
+               return c.substring(name.length, c.length);
+           }
+       }
+       return "";
+   }
+   
+   // Nota: Pendiente guardar los datos del JSON en la cooki
+
+   function checkCookie() {
+       var user=getCookie(cliente.usuario);
+       if (user != "") {
+           alert("Bienvenido " + user);
+       } else {
+       if (user != "" && user != null) {
+           setCookie(cliente.usuario, user, 30);
+       }
+       }
+   }
+
     var validar = function(e){
         validarNombre(e);
         validarApellido(e);
@@ -159,35 +225,6 @@ function validarSiLetra(letra) {
         validarEdad(e);
     };
 
-    console.log("conectado");
     formInscription.addEventListener("submit",validar);
-
-    // Llenando JSON con los datos del formulario
-    var fecha = new Date();
-    var formInscription = document.getElementsByName("registro")[0];
-    function crear_registro(form){
-
-    var cliente={
-        "nombre": formInscription.Nombre.value + " " + form.Apellido.value,
-        "usuario": formInscription.Correo.value,
-        "direccion": formInscription.Direccion.value,
-        "registro": new Date(),
-        "expira": calcula_fecha()
-    }
-
-    //Función para calcular la fecha en la que vence la cookie
-    function calcula_fecha(){
-        // exdays es la cantidad de días que durará activa la Cookie "definido en checkCookie()" 
-        // x 1000 milisegundos x 60 segundos x 60 minutos x 24 horas
-        fecha.setTime(fecha.getTime() + (90*24*60*60*1000)); 
-        var expires = fecha.toGMTString();
-        return expires;
-    }
-
-    //VERIFICANDO QUE EL JSON QUEDE LLENO
-    var json_cliente=JSON.stringify(cliente,0,4);
-    console.log(json_cliente);
-    return false;
-    }
 
 }())
